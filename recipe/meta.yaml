@@ -21,6 +21,7 @@ requirements:
     - semver >=3.0.0
     - docutils >=0.21.0
     - pip
+    - wheel
   run:
     - python
     - semver >=3.0.0
@@ -38,11 +39,17 @@ test:
 about:
   home: https://git.sr.ht/~bignose/changelog-chug
   summary: Parser library for project Change Log documents.
+  description: |
+    Changelog-chug is a library for parsing and generating project Change Log documents.
+    It is designed to be used in conjunction with the `chug` command-line tool.
   dev_url: https://git.sr.ht/~bignose/changelog-chug
   license: AGPL-3.0
+  license_family: GPL
   license_file:
     - LICENSE.AGPL-3
     - COPYING
+  docs_url: https://git.sr.ht/~bignose/changelog-chug
+  dev_url: https://git.sr.ht/~bignose/changelog-chug
 
 extra:
   recipe-maintainers:
