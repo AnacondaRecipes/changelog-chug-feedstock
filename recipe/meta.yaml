@@ -18,8 +18,6 @@ requirements:
   host:
     - python
     - setuptools >=62.4.0
-    - semver >=3.0.0
-    - docutils >=0.21.0
     - pip
     - wheel
   run:
