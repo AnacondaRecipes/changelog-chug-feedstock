@@ -36,6 +36,7 @@ test:
     - python
     - pip
 
+
 about:
   home: https://git.sr.ht/~bignose/changelog-chug
   summary: Parser library for project Change Log documents.
@@ -48,9 +49,11 @@ about:
   license_file:
     - LICENSE.AGPL-3
     - COPYING
-  docs_url: https://git.sr.ht/~bignose/changelog-chug
+  doc_url: https://git.sr.ht/~bignose/changelog-chug
   dev_url: https://git.sr.ht/~bignose/changelog-chug
 
 extra:
   recipe-maintainers:
     - xylar
+  skip-lints:
+    - host_section_needs_exact_pinnings
