@@ -10,40 +10,54 @@ source:
   sha256: 98ee1e8be75b6e9d512c35292c3c293a124541a4ec2014a6ec3cf33a3d265d2d
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  skip: True  # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - setuptools >=62.4.0
     - semver >=3.0.0
     - docutils >=0.21.0
     - pip
+    - wheel
   run:
-    - python >={{ python_min }}
+    - python
     - semver >=3.0.0
     - docutils >=0.21.0
 
 test:
   imports:
     - chug
+    - chug.model
+    - chug.parsers
+    - chug.parsers.core
+    - chug.parsers.rest
+    - chug.writers
   commands:
     - pip check
   requires:
-    - python {{ python_min }}
     - pip
+
 
 about:
   home: https://git.sr.ht/~bignose/changelog-chug
   summary: Parser library for project Change Log documents.
+  description: |
+    Changelog-chug is a library for parsing and generating project Change Log documents.
+    It is designed to be used in conjunction with the `chug` command-line tool.
   dev_url: https://git.sr.ht/~bignose/changelog-chug
   license: AGPL-3.0
+  license_family: GPL
   license_file:
     - LICENSE.AGPL-3
     - COPYING
+  doc_url: https://git.sr.ht/~bignose/changelog-chug
+  dev_url: https://git.sr.ht/~bignose/changelog-chug
 
 extra:
   recipe-maintainers:
     - xylar
+  skip-lints:
+    - host_section_needs_exact_pinnings
