@@ -30,6 +30,11 @@ requirements:
 test:
   imports:
     - chug
+    - chug.model
+    - chug.parsers
+    - chug.parsers.core
+    - chug.parsers.rest
+    - chug.writers
   commands:
     - pip check
   requires:
